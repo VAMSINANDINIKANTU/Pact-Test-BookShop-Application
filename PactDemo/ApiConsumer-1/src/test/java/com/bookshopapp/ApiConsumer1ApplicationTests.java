@@ -1,5 +1,4 @@
 package com.bookshopapp;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,7 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.bookshopapp.service.BookConsumerService;
 import com.bookshopapp.service.ProviderConnector;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import au.com.dius.pact.consumer.Pact;
 import au.com.dius.pact.consumer.PactProviderRuleMk2;
 import au.com.dius.pact.consumer.PactVerification;
@@ -34,7 +32,7 @@ public class ApiConsumer1ApplicationTests {
 				.willRespondWith().status(200)
 				.body("{\n" + "\t\"bookName\": \"Head First Java\",\n" + "\t\"bookPrice\": 498,\n"
 				        	+ "\t\"publisherName\": \"Raj\",\n" + "\t\"publishingYear\": 2005\n" + "}")
-				.toPact();
+			        .toPact();
 	}
 	
 	@Pact(consumer = "myconsumer2") // will default to the provider name from mockProvider in Rule
@@ -57,7 +55,6 @@ public class ApiConsumer1ApplicationTests {
 	public void runTestWithState() {
 		Assert.assertTrue(bookconsumerService.getBook((long) 1).isPresent());
 	}
-
 }
 
 @TestConfiguration
@@ -82,5 +79,4 @@ class TestConfig {
 	public RestTemplateBuilder getRestTemplateBuilder() {
 		return new RestTemplateBuilder();
 	}
-
 }
