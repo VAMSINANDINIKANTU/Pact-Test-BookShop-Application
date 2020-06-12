@@ -11,7 +11,5 @@ public class BookNotFoundException extends RuntimeException {
      public BookNotFoundException(String name)
      {
   	   super("Employee name not found : " + name);
-  	   
      }
-	
 }
