@@ -1,5 +1,4 @@
 package com.bookshopapp;
-
 import java.util.Arrays;
 import java.util.Map;
 import org.apache.http.HttpRequest;
@@ -25,30 +24,22 @@ import au.com.dius.pact.provider.junit.target.TestTarget;
 @RunWith(PactRunner.class)
 @Provider("bookProvider2")
 @VerificationReports({ "console", "markdown", "json" })
-//@PactFolder("/C:\\Users\\win10\\workspaceSts\\ApiConsumer-1\\target\\pacts")
-//@IgnoreNoPactsToVerify
 @PactBroker
 public class BookShopMaintenanceApplicationProviderTests {
 	private int PORT = 8090;
-
-	@TestTarget
+        @TestTarget
 	public final Target target = new HttpTarget("http", "localhost", PORT);
-
-	private static ConfigurableApplicationContext applicationContext;
+        private static ConfigurableApplicationContext applicationContext;
 
 	@BeforeClass
 	public static void setVersions() {
-
 		System.setProperty("pact.provider.version", "1.0.0");
 		System.setProperty("pact.verifier.publishResults", "true");
-
 	}
 
 	@BeforeClass
 	public static void start() {
-
 		applicationContext = SpringApplication.run(ApiProviderPact1Application.class);
-
 	}
 
 	// This method acts as an interceptor before the validation happens
@@ -67,7 +58,5 @@ public class BookShopMaintenanceApplicationProviderTests {
 		System.out.println("something with state");
 		BookService bookservice = applicationContext.getBean(BookService.class);
 		bookservice.addBook(new Book(1L, "C++", 324, "Manoj", 2001));
-		
 	}
-
 }
