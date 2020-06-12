@@ -1,5 +1,4 @@
 package com.bookshopapp.entities;
-
 public class Book {
 	public Long id;
 	public String bookName;
@@ -39,12 +38,10 @@ public class Book {
 	}
 	public Book() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "Book [bookName=" + bookName + ", bookPrice=" + bookPrice + ", publisherName="
 				+ publisherName + ", publishingYear=" + publishingYear + "]";
 	}
-
 }
