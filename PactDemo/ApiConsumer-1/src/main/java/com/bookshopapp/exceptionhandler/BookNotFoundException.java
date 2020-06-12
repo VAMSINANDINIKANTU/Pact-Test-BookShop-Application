@@ -6,12 +6,10 @@ public class BookNotFoundException extends RuntimeException {
      private static final long serialVersionUID = 1L;
      public BookNotFoundException(Long id)
      {
-  	   super("Employee id not found : " + id);
+  	   super("book id not found : " + id);
      }
      public BookNotFoundException(String name)
      {
-  	   super("Employee name not found : " + name);
-  	   
+  	   super("book name not found : " + name);
      }
-	
 }
