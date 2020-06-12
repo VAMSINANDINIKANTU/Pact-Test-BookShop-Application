@@ -1,7 +1,6 @@
 package com.bookshopapp.exceptionhandler;
 import java.time.LocalDateTime;
 import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 public class ErrorResponse {
@@ -41,7 +40,6 @@ public class ErrorResponse {
 	public void setTimeStamp(LocalDateTime timeStamp) {
 		this.timeStamp = timeStamp;
 	}
-	
 	public ErrorResponse(HttpStatus status, LocalDateTime timeStamp, String message, List<String> errors,
 			String path) {
 		super();
@@ -52,6 +50,5 @@ public class ErrorResponse {
 		this.path = path;
 	}
 	public ErrorResponse() {
-		
 	}
 }
